@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=5"/>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.css">
+  <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+
+  <title></title>
+
+  <style>
+    nav {
+      font-size: 1.3em;
+    }
+    .nav-item {
+      margin-right: 10px;
+    }
+
+    .navbar-brand {
+      font-size: 1.4em;
+      font-weight: 700;
+    }
+
+    .navbar-fixed-top.scrolled {
+      background-color: #f0f0f2 !important;
+      transition: background-color 200ms linear;
+      color: #0ea277!important;
+    }
+
+    .navbar-fixed-top.scrolled .navbar-brand,.navbar-fixed-top.scrolled .navbar-nav .nav-link {
+      color: #0ea277!important;
+    }
+
+    .navbar-nav {
+      margin-left: auto;
+      margin-right: 20px;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background:rgba(246, 247, 251, 1);
+    }
+
+    .wrapper {
+      padding: 10px;
+      margin-top: 50px;
+    }
+
+    .githead {
+      font-weight: 700;
+    }
+
+    .jobhead {
+      font-weight: 200;
+    }
+
+    .jumbotron {
+      margin: 30px 0px;
+      height: 200px;
+      width: 100%;
+      background: url(carp.jpg);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: 10px;
+      position: relative;
+    }
+
+    .cover {
+      width: 100%;
+      height: 100%;
+      background: black;
+      opacity: 0.6;
+      position: absolute;
+      top: 0;
+    }
+
+    .carphead {
+      position: absolute;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      text-align: center;
+      top: 40%;
+      color: white;
+    }
+
+    *:focus {
+      outline: none;
+    }
+
+    .leftpanel {
+      padding: 10px;
+    }
+
+    .rightpanel {
+    }
+
+    .lochead {
+      color: rgba(185, 189, 207, 1);
+      font-weight: bold;
+    }
+
+    .locbox {
+      width: 90%;
+      background: white;
+      padding: 10px;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+      border-radius: 4px;
+      color: rgba(185, 189, 207, 1);
+      margin: 20px 0;
+    }
+
+    .locterm {
+      border:none;
+      padding: 5px;
+      margin-left: 5px;
+      width: 80%;
+    }
+
+    .locbut {
+      width: 90%;
+      margin: auto;
+      padding: 10px;
+      font-size: 1.1em;
+    }
+
+    .loc {
+      font-size: 1em;
+    }
+
+    .category {
+      margin-left: 10px;
+    }
+
+    .catname {
+      margin: 5px 0;
+      cursor: pointer;
+    }
+
+    .catinput {
+      cursor: pointer;
+    }
+
+    .companybox {
+      width: 100%;
+      background: white;
+      margin: 20px auto;
+      padding: 10px;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+      border-radius: 5px;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .compimg {
+      width: 250px;
+      height: 180px;
+      border-radius: 4px;
+      display: inline-block;
+    } 
+
+    .jobdet {
+      margin-left: 20px;
+      display: inline-block;
+      text-transform: capitalize;
+      top: 20px;
+      position: absolute;
+    }
+
+    .comppos {
+      margin-bottom: 8px;
+    }
+
+    .jobpostdet {
+      color: rgba(185, 189, 207, 1);
+      bottom: 0;
+      position: absolute;
+      right: 0;
+      padding: 5px 10px;
+      font-size: 0.9em;
+    }
+
+    .jobloc {
+      margin-right: 15px;
+    }
+
+    .pagebox {
+      float: right;
+      height: 40px;
+      padding: 5px;
+    }
+
+    .leftarrowbox,.rightarrowbox,.nobox {
+      background: white;
+      border-radius: 5px;
+      height: 30px;
+      width: 30px;
+      border: 1px solid #334680;
+      margin: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      float: left;
+      cursor: pointer;
+      font-size: 0.9em;
+      color: #334680;
+    }
+    p {
+      margin-bottom: 0;
+    }
+
+    .nowrapper {
+      float: left;
+    }
+
+    .active2:hover,.nobox:hover {
+      background: #334680;
+      color: white;
+    }
+
+    .selected {
+      background: #334680;
+      color: white;
+      animation: click 0.3s 1 linear;
+    }
+
+    .disabled {
+      border: 1px solid rgba(185, 189, 207, 1);
+      color: rgba(185, 189, 207, 1);
+      cursor: default;
+    }
+
+    .active2 {
+      cursor: pointer;
+      border: 1px solid #334680;
+      color: #334680;
+    }
+
+    .staricon {
+      color: yellow;
+    }
+
+    .instacarousel {
+      width: 100%;
+    }
+
+    .carousel-cell {
+      width: 100%;
+      /*height: 200px;*/
+      height: 180px;
+      box-shadow: none;
+      margin: 0;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .instabox {
+      height: 100%;
+      width: 100%;
+      float: left;
+    }
+
+    .insta1 {
+      background: url(ba.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+    .insta2 {
+      background: url(ba2.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+    .insta3 {
+      background: url(ba3.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+    .insta4 {
+      background: url(ba4.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+    @keyframes click {
+      0% {
+        background: white;
+        color: #334680;
+      }
+      100% {
+        background: #334680;
+        color: white;
+      }
+    }
+
+    @media (max-width: 991px){
+      .searchterm {
+        width: 60%;
+      }
+      .searchbut {
+        width: 30%;
+      }
+      .comppos {
+        font-size: 0.9em;
+      }
+      .companybox {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .jobdet {
+        position: initial;
+      }
+    }
+    @media (max-width: 500px){
+      .searchterm {
+        width: 40%;
+      }
+      .searchbut {
+        width: 40%;
+      }
+      .companybox {
+        flex-direction: column;
+      }
+      .compimg {
+        margin-bottom: 20px;
+      }
+    }
+
+
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Logo</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container wrapper">
+
+    <div class="jumbotron">
+      <div class="cover"></div>
+      <h1 class="carphead">Carpenter</h1>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="leftpanel col-md-4">  <!-- leftpanel -->
+          <div class="locbox">
+            <i class="fas fa-briefcase"></i>
+            <input class="locterm" type="text" name="locterm" placeholder="Comapny Name">
+          </div>
+          <h4 class="lochead">Star Ratings</h4>
+          <form class="loc">
+            <div class="catbox">
+              <input type="checkbox" class="catinput" id="'+t.name+'" name="cat">
+              <label class="catname" id="'+t.name+'" for="'+t.name+'">
+                <span class="category"><i class="fas fa-star staricon"></i><i class="fas fa-star staricon"></i><i class="fas fa-star staricon"></i><i class="fas fa-star staricon"></i><i class="fas fa-star staricon"></i></span>
+              </label>
+            </div>
+            <div class="catbox">
+              <input type="checkbox" class="catinput" id="'+t.name+'" name="cat">
+              <label class="catname" id="'+t.name+'" for="'+t.name+'">
+                <span class="category"><i class="fas fa-star staricon"></i><i class="fas fa-star staricon"></i><i class="fas fa-star staricon"></i><i class="fas fa-star staricon"></i></span>
+              </label>
+            </div>
+            <div class="catbox">
+              <input type="checkbox" class="catinput" id="'+t.name+'" name="cat">
+              <label class="catname" id="'+t.name+'" for="'+t.name+'">
+                <span class="category"><i class="fas fa-star staricon"></i><i class="fas fa-star staricon"></i><i class="fas fa-star staricon"></i></span>
+              </label>
+            </div>
+            <div class="catbox">
+              <input type="checkbox" class="catinput" id="'+t.name+'" name="cat">
+              <label class="catname" id="'+t.name+'" for="'+t.name+'">
+                <span class="category"><i class="fas fa-star staricon"></i><i class="fas fa-star staricon"></i></span>
+              </label>
+            </div>
+            <div class="catbox">
+              <input type="checkbox" class="catinput" id="'+t.name+'" name="cat">
+              <label class="catname" id="'+t.name+'" for="'+t.name+'">
+                <span class="category"><i class="fas fa-star staricon"></i></span>
+              </label>
+            </div>
+          </form>
+        </div>
+
+        <div class="rightpanel col-md-8">  <!-- rightpanel -->
+          <div class="companywrapper"></div> <!-- job posting -->
+          <div class="pagebox">  <!-- page number -->
+            <div class="leftarrowbox">
+              <i class="fas fa-angle-left arrow"></i>
+            </div>
+            <div class="nowrapper"></div>
+            <div class="rightarrowbox">
+              <i class="fas fa-angle-right arrow"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.pkgd.js"></script>
+  <script>
+
+    $(function () {
+      $(document).scroll(function () {
+        var $nav = $(".navbar-fixed-top");
+        $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+      });
+    });
+
+    function carousel(){
+      var instacarousel = $('.instacarousel').flickity({
+        prevNextButtons: false,
+        pageDots: false,
+        autoPlay: 2000,
+        wrapAround: true,
+      });
+    }
+
+    var leftarrow = document.querySelector(".leftarrowbox");
+    var rightarrow = document.querySelector(".rightarrowbox");
+    var pagesize = 3;
+    showdata();
+    carousel();
+    //displaying jobs
+    function showdata(){
+      for(var i=0;i<10;i++)
+      {
+        document.querySelector(".companywrapper").innerHTML +='<div class="companybox""><div class="compimg"><div class="carousel instacarousel"><div class="carousel-cell 1"><div class="instabox insta1"></div></div><div class="carousel-cell 2"><div class="instabox insta2"></div></div><div class="carousel-cell 3"><div class="instabox insta3"></div></div><div class="carousel-cell 4"><div class="instabox insta4"></div></div></div></div><div class="jobdet"><h3 class="compname">Comapny Name</h3><p class="comppos"><i class="fas fa-star staricon"></i><i class="fas fa-star staricon"></i><i class="fas fa-star staricon"></i><i class="fas fa-star staricon"></i><i class="fas fa-star staricon"></i></p><p class="comppos">Projects completed: 50</p></div></div>';
+      }
+    }
+    pagenodata();
+    //displaying page numbers
+    function pagenodata(){
+      for(var i=1;i<=3;i++)
+      {
+        document.querySelector(".nowrapper").innerHTML +='<div class="'+i+' nobox"><p>'+i+'</p></div>';
+      }
+      $("."+1).addClass("selected");
+      leftarrow.classList.add("disabled");
+      rightarrow.classList.add("active2");
+    }
+
+    //when click on page number
+    $(".pagebox").on('click','.nobox',function(){
+      $(".nobox").removeClass("selected");
+      $(this).addClass("selected");
+      var t = $(this).attr("class").split(" ")[0];
+      checkleft(t);
+      checkright(t);
+    })
+
+    //when click on left arrow of page number
+    $(".pagebox").on('click','.leftarrowbox',function(){
+      var temp= $(".selected").attr("class").split(" ")[0];
+      if(temp!=1){
+        $("."+temp).removeClass("selected");
+        temp-=1;
+        pgno=temp;
+        $("."+temp).addClass("selected");
+        checkleft(temp);
+        checkright(temp);
+      }
+    })
+
+    //when click on right arrow of page number
+    $(".pagebox").on('click','.rightarrowbox',function(){
+      var a= $(".selected").attr("class").split(" ")[0];
+      if(a!=pagesize){
+        $("."+a).removeClass("selected");
+        var j =parseInt(a);
+        j=j+1;
+        a=j;
+        $("."+a).addClass("selected");
+        checkleft(a);
+        checkright(a);
+      }
+    })
+
+    //checking if left arrow should be disabled or not
+    function checkleft(t) {
+      if(t>1)
+      {
+        leftarrow.classList.remove("disabled");
+        leftarrow.classList.add("active2");
+      }
+      else
+      {
+        leftarrow.classList.add("disabled");
+        leftarrow.classList.remove("active2");
+      }
+    }
+
+    //checking if right arrow should be disabled or not
+    function checkright(t) {
+      if(t<pagesize)
+      {
+        rightarrow.classList.remove("disabled");
+        rightarrow.classList.add("active2");
+      }
+      else
+      {
+        rightarrow.classList.add("disabled");
+        rightarrow.classList.remove("active2");
+      }
+    }
+
+    //if clicked any job
+    $(".companywrapper").on('click','.companybox',function(){
+      window.location.href = "profile.html";
+    })
+
+
+
+
+  </script>
+</body>
+</html>

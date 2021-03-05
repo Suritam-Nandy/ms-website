@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <title></title>
+  <!-- <link rel="icon" href="favicon.ico"> -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.css">
+  <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+
+</head>
+<style>
+
+  body {
+    background: #262626;
+  }
+
+  .wrapper {
+    background: url(ba3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index:-1;
+  }
+
+  nav {
+    font-size: 1.3em;
+  }
+  .nav-item {
+    margin-right: 10px;
+  }
+
+  .navbar-brand {
+    font-size: 1.4em;
+    font-weight: 700;
+  }
+
+  .navbar-fixed-top.scrolled {
+    background-color: #f2f2f2 !important;
+    transition: background-color 200ms linear;
+    color: #52ab98!important;
+  }
+
+  .navbar-fixed-top.scrolled .navbar-brand,.navbar-fixed-top.scrolled .navbar-nav .nav-link {
+    color: #52ab98!important;
+  }
+
+  .navbar-nav {
+    margin-left: auto;
+    margin-right: 20px;
+  }
+
+  .cover {
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0.4;
+  }
+
+  .headingbox {
+    text-align: center;
+    top: 35vh;
+    color: white;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    padding: 10px;
+  }
+  .heading {
+    font-size: 4em;
+    font-weight: 700;
+  }
+  .tagline {
+    font-weight: 600;
+  }
+
+  body {
+    padding-top: 100vh;
+  }
+
+  .databox {
+    width: 80%;
+    background: white;
+    margin: auto;
+    box-shadow:0px 0px 10px black; 
+    margin-top: -30px;
+    z-index: 4;
+    padding: 20px;
+  }
+
+  .datainnerbox {
+    height: 60px;
+    text-align: center;
+    align-items: center;
+    border-right: 1px solid black;
+    font-size: 1.3em;
+    /*color: #ac9b7d;*/
+    /*color: #0ea277;*/
+  }
+
+  .datahead {
+    font-weight: 700;
+  }
+
+  .servicewrapper,.projectwrapper,.aboutwrapper,.footerwrapper,.whywrapper {
+    margin-top: 150px;
+    width: 100%;
+    position: relative;
+    color: gray;
+  }
+
+  .servicehead {
+    text-align: center;
+    margin-bottom: 100px;
+    font-weight: 700;
+    color: #0ea277;
+  }
+
+  .container-fluid {
+    padding: 0;
+  }
+
+  .servecat {
+    color: black;
+  }
+
+  .servebox {
+    width: 40vw;
+    background: #f0f0f2;
+    box-shadow: 0 0 3px black;
+    position: relative;
+    min-height: 250px;
+    min-width: 250px;
+    margin-left: auto;
+    margin-right: 100px;
+    margin-bottom: 220px;
+    padding: 8vw;
+  }
+
+  .serveimgbox {
+    position: absolute;
+    left: -20vw;
+    top: 2.5vw;
+    width: 25vw;
+    height: 25vw;
+    min-height: 220px;
+    min-width: 220px;
+  }
+
+  .service1img {
+    background: url(ba.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    /*background-attachment: fixed;*/
+  }
+
+  .service2 {
+    margin-right: auto;
+    margin-left: 100px;
+    width: 40vw;
+    background: #ac9b7d;
+    background: #f0f0f2;
+    box-shadow: 0 0 3px black;
+    position: relative;
+    min-height: 250px;
+    min-width: 250px;
+    margin-bottom: 220px;
+    padding: 8vw;
+  }
+
+  .service2img {
+    position: absolute;
+    top: 2.5vw;
+    width: 25vw;
+    height: 25vw;
+    min-height: 220px;
+    min-width: 220px;
+    right: -20vw;
+    background: url(ba3.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    /*background-attachment: fixed;*/
+  }
+
+  .service3img {
+    background: url(ba4.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    /*background-attachment: fixed;*/
+  }
+
+  .servelink {
+    cursor: pointer;
+  }
+
+  .servelink:hover {
+    color: black;
+  }
+
+  .extraline {
+    height: 80px;
+    width: 2px;
+    background: black;
+    border: 1px solid black;
+    position: absolute;
+    bottom: -150px;
+    left: 0;
+  }
+
+  .extraline2 {
+    height: 80px;
+    width: 2px;
+    background: black;
+    border: 1px solid black;
+    position: absolute;
+    bottom: -150px;
+    right: 0;
+  }
+
+  .projectheadbox {
+    height: 250px;
+    width: 100%;
+    background: url(ba2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .projecthead {
+    color: white;
+    position: absolute;
+    font-weight: 700;
+  }
+
+  .cover2 {
+    float: left;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(9, 5vw);
+    grid-gap: 20px;
+    margin: 50px;
+  }
+  .gallery__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  .gallery__item {
+    position: relative;
+  }
+  .gallery__item--1 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 6;
+  }
+  .gallery__item--2 {
+    grid-column-start: 4;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 5;
+  }
+  .gallery__item--3 {
+    grid-column-start: 6;
+    grid-column-end: 9;
+    grid-row-start: 1;
+    grid-row-end: 7;
+  }
+  .gallery__item--4 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 6;
+    grid-row-end: 10;
+  }
+
+  .gallery__item--5 {
+    grid-column-start: 4;
+    grid-column-end: 6;
+    grid-row-start: 5;
+    grid-row-end: 10;
+  }
+
+  .gallery__item--6 {
+    grid-column-start: 6;
+    grid-column-end: 9;
+    grid-row-start: 7;
+    grid-row-end: 10;
+  }
+
+  .cover3 {
+    position: absolute;
+    top: 0;
+    border-radius: 10px;
+    opacity: 0;
+  }
+
+  .projectinfo {
+    position: absolute;
+    color: white;
+    top: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    width: 50%;
+    text-align: center;
+    opacity: 0;
+  }
+
+  .projecttitle {
+    font-size: 2em;
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+
+  .gallery__item:hover .cover3 {
+    opacity: 0.6;
+    transition: 0.3s;
+  }
+
+  .gallery__item:hover .projectinfo {
+    opacity: 1;
+    transition: 0.3s;
+  }
+
+  .aboutwrapper {
+    padding-top: 200px;
+  }
+
+  .aboutbox {
+    width:40vw;
+    background: #f0f0f2;
+    border-radius: 5px;
+    box-shadow: 0 0 5px black;
+    margin: auto 20vw;
+    position: relative;
+    padding: 50px;
+  }
+
+  .abouthead {
+    color: #0ea277;
+  }
+
+  .abouthead,.servecat {
+    margin-bottom: 50px;
+    font-weight: 700;
+  }
+
+  .aboutimg {
+    background: url(ba2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    width: 30vw;
+    position: absolute;
+    right: -25vw;
+    bottom: 0;
+    z-index: -1;
+  }
+
+  .footerwrapper {
+    background: white;
+    padding: 70px;
+    padding-bottom: 10px;
+    color: gray;
+    margin-top: 0;
+  }
+
+  .foothead {
+    text-align: center;
+    margin-bottom: 70px;
+    color: black;
+    font-weight: 700;
+    color: #0ea277;
+  }
+
+  .contactbox {
+    align-items: center;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .contacttext {
+    font-size: 1em;
+    cursor: pointer;
+    color: gray;
+  }
+
+  .contacttext:hover {
+    color: black;
+  }
+
+  .connectbox {
+    border-radius: 50%;
+    padding: 8px;
+    background: #0ea277;
+    width: 40px;
+    text-align: center;
+    color: black;
+    box-shadow: 0px 0px 1px black;
+    font-size: 18px;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .connectbox:hover {
+    background: #24c898;
+  }
+
+  .foottext {
+    font-size: 1.3em;
+  }
+
+  .partnerwrapper {
+    background: white;
+    padding: 20px;
+    color: gray;
+  }
+
+  .partnerhead {
+    text-align: center;
+    margin-bottom: 10px;
+    color: black;
+    font-weight: 700;
+    color: #0ea277;
+  }
+
+  .partinnerbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .partimg {
+    background: url(partner2.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+  }
+
+  .partimgbox {
+    height: 150px;
+    width: 150px;
+    min-height: 150px;
+    min-width: 150px;
+    margin: 5px;
+  }
+
+  .testbox {
+    padding: 10px;
+    margin-top: 150px;
+  }
+
+  .testtext {
+    color: gray;
+  }
+
+  .testcarousel {
+    width: 80%;
+    margin: auto;
+  }
+
+  .testp {
+    margin-top: 10px;
+  }
+
+  .testiconbox {
+    border-radius: 50%;
+    padding: 10px;
+    background: #0ea277;
+    width: 45px;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: -50px;
+    color: white;
+    box-shadow: 0px 0px 1px black;
+  }
+
+  .testcard {
+    padding-bottom: 20px;
+  }
+
+  .carousel-cell-test {
+    padding: 50px 15px;
+    width: 40%;
+    box-shadow: none;
+  }
+
+  .testhead {
+    margin-bottom: 70px;
+    text-align: center;
+    color: #0ea277;
+    font-weight: 700;
+  }
+
+  .whywrapper {
+    padding: 50px;
+  }
+
+  .whybox {
+    margin: auto;
+    margin-bottom: 10px; 
+    padding: 20px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+  }
+
+  .whytext {
+    background: white;
+    box-shadow: 0 0 2px black;
+    padding: 20px;
+  }
+
+  @media (max-width: 1050px) {
+    .aboutbox {
+      width: 50vw;
+      margin: auto 5vw;
+    }
+    .aboutimg {
+      width: 40vw;
+      height: 550px;
+      right: -35vw;
+    }
+    .gallery {
+      grid-template-rows: repeat(15, 5vw);
+    }
+
+    .gallery__item--1 {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 1;
+      grid-row-end: 6;
+    }
+    .gallery__item--2 {
+      grid-column-start: 5;
+      grid-column-end: 9;
+      grid-row-start: 1;
+      grid-row-end: 5;
+    }
+    .gallery__item--3 {
+      grid-column-start: 1;
+      grid-column-end: 6;
+      grid-row-start: 6;
+      grid-row-end: 10;
+    }
+    .gallery__item--4 {
+      grid-column-start: 6;
+      grid-column-end: 9;
+      grid-row-start: 5;
+      grid-row-end: 11;
+    }
+
+    .gallery__item--5 {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-row-start: 10;
+      grid-row-end: 15;
+    }
+
+    .gallery__item--6 {
+      grid-column-start: 5;
+      grid-column-end: 9;
+      grid-row-start: 11;
+      grid-row-end: 15;
+    }
+  }
+
+  @media (max-width: 840px) {
+    .servebox {
+      width: 65vw;
+      margin-right: 15px;
+      padding-right: 4vw;
+      padding-left: 12vw;
+    }
+    .service2 {
+      width: 65vw;
+      margin-left: 15px;
+      padding-right: 12vw;
+      padding-left: 4vw;
+    }
+  }
+  @media (max-width: 720px) {
+    .servebox {
+      width: 80vw;
+      padding-right: 1vw;
+      padding-left: 25vw;
+      /*padding-top: 220px;*/
+    }
+    .service2 {
+      width: 80vw;
+      padding-right: 25vw;
+      padding-left: 4vw;
+    }
+    .service2img {
+      right: -13vw;
+    }
+    .serveimgbox {
+      left: -13vw;
+    }
+    .aboutbox {
+      width: 50vw;
+      margin: auto 2vw;
+    }
+    .aboutimg {
+      width: 48vw;
+      height: 550px;
+      right: -43vw;
+    }
+    .carousel-cell-test {
+      width: 60%;
+    }
+    .partimgbox {
+      margin: 1px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .servebox {
+      width: 80vw;
+      padding-right: 8vw;
+      padding-left: 8vw;
+      padding-top: 220px;
+    }
+    .service2 {
+      padding-top: 220px;
+      padding-right: 8vw;
+      padding-left: 8vw;
+    }
+    .service2img {
+      right: -10vw;
+    }
+    .serveimgbox {
+      left: -10vw;
+    }
+    .aboutbox {
+      width: 70vw;
+      margin: auto 1vw;
+    }
+    .aboutimg {
+      width: 60vw;
+      height: 400px;
+      bottom: -150px;
+      right: -25vw;
+    }
+    .aboutwrapper {
+      padding-top: 0px;
+      padding-bottom: 100px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .datainnerbox {
+      height: 60px;
+      margin-bottom: 10px;
+      text-align: center;
+      align-items: center;
+      border-right: none;
+      font-size: 1.1em;
+    }
+
+    .partimg {
+      width: 80%;
+      margin: auto;
+      height: 100px;
+    }
+
+  }
+
+  .ab1 {
+    height: 600px;
+    background: #262626;
+    border: 1px solid #9a8a78;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    color: black;
+    flex-direction: column;
+  }
+  .ab1head {
+    font-weight: 700;
+    font-size: 4em;
+  }
+  .ab1img {
+    width: 100%;
+    height: 100%;
+    background: url(ba.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  .ab2 {
+    height: 500px;
+    background: #fae5df;
+    border: 1px solid #0ea277;
+    padding: 0;
+  }
+  .ab2img {
+    width: 100%;
+    height: 100%;
+    background: url(carp.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+
+  .abcover {
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0.4;
+    position: absolute;
+    top: 0;
+  }
+
+  .abcarphead {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    top: 40%;
+    color: white;
+  }
+
+  .abcont {
+    padding: 50px;
+    text-align: center;
+    align-items: center;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .ab2head {
+    color: black;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    font-weight: 700;
+  }
+
+  .ab2but {
+    border: 2px solid #0ea277;
+    padding: 7px 50px;
+    border-radius: 50px;
+    margin-top: 20px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  .ab2but:hover {
+    background: #0ea277;
+    color: white;
+    transition: 0.3s;
+  }
+
+  .ab3 {
+    height: 250px;
+    background: #fae5df;
+    border: 1px solid #0ea277;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .ab3icon {
+    margin-bottom: 20px;
+    font-size: 2.2em;
+    color: #0ea277;
+  }
+
+</style>
+<body>
+
+  <div class="wrapper">
+    <div class="cover"></div>
+  </div>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Logo</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="list.html">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="headingbox">
+    <h1 class="heading">Name of company</h1>
+    <h3 class="tagline">Tag line of company</h3>
+  </div>
+  <div class="databox">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-6 col-xs-6 datainnerbox">
+          <span class="counter-count">100</span><span>+</span>
+          <div class="datahead">Projects</div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-6 datainnerbox">
+          <span class="counter-count">100</span><span>+</span>
+          <div class="datahead">Contractors</div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-6 datainnerbox">
+          <span class="counter-count">100</span><span>+</span>
+          <div class="datahead">Carpenters</div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-6 datainnerbox" style="border-right: none;">
+          <span class="counter-count">100</span><span>+</span>
+          <div class="datahead">Interior Designers</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container servicewrapper">
+    <!-- <h1 class="servicehead">Services</h1>
+
+    <div class="service1 servebox">
+      <div class="service1img serveimgbox">
+      </div>
+      <h3 class="servecat">Carpenter</h3>
+      <p class="servetext">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat.</p>
+      <span class="servelink">Learn more</span>
+      <div class="extraline"></div>
+    </div>
+
+    <div class="service2">
+      <div class="service2img">
+      </div>
+      <h3 class="servecat">Contractor</h3>
+      <p class="servetext">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat.</p>
+      <span class="servelink">Learn more</span>
+      <div class="extraline2"></div>
+    </div>
+
+    <div class="service3 servebox">
+      <div class="service3img serveimgbox">
+      </div>
+      <h3 class="servecat">Interior Designer</h3>
+      <p class="servetext">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat.</p>
+      <span class="servelink">Learn more</span>
+    </div> -->
+
+    <div class="row">
+      <div class="col-md-6 ab1">
+        <div class="ab1head">Our</div>
+        <div class="ab1head">Services</div>
+      </div>
+      <div class="col-md-6 ab1">
+        <div class="ab1img"></div>
+      </div>
+
+      <div class="col-md-6 ab2 abcont">
+        <p class="ab2head">Carpenter</p>
+        <p class="ab2text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat.</p>
+        <div class="ab2but">Learn More</div>
+      </div>
+
+      <div class="col-md-6 ab2 abcont">
+        <p class="ab2head">Contractor</p>
+        <p class="ab2text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat.</p>
+        <div class="ab2but">Learn More</div>
+      </div>
+      <div class="col-md-6 ab2">
+        <div class="ab2img"></div>
+      </div>
+      <div class="col-md-6 ab2 abcont">
+        <p class="ab2head">Interior Designer</p>
+        <p class="ab2text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat.</p>
+        <div class="ab2but">Learn More</div>
+      </div>
+      <div class="col-md-3 ab3">
+        <i class="fas fa-medal ab3icon"></i>
+        <p class="ab3text">Quality Assured</p>
+      </div>
+      <div class="col-md-3 ab3">
+        <i class="fas fa-user-tie ab3icon"></i>
+        <p class="ab3text">Professional Team</p>
+      </div>
+      <div class="col-md-3 ab3">
+        <i class="fas fa-boxes ab3icon"></i>
+        <p class="ab3text">Highly Experienced</p>
+      </div>
+      <div class="col-md-3 ab3">
+        <i class="fas fa-award ab3icon"></i>
+        <p class="ab3text">Impecable Reputation</p>
+      </div>
+    </div>
+
+  </div>  
+
+  <div class="whywrapper">
+    <div class="container-fluid">
+      <h1 class="testhead partnerhead">Why Choose Us</h1>
+      <div class="row">
+        <div class="col-md-4 whybox">
+          <p class="whytext">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat.
+          </p>
+        </div>
+        <div class="col-md-4 whybox">
+          <p class="whytext">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat.
+          </p>
+        </div>
+        <div class="col-md-4 whybox">
+          <p class="whytext">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="projectwrapper">
+    <div class="projectheadbox">
+      <div class="cover cover2"></div>
+      <h1 class="projecthead">Projects</h1>
+    </div>
+    <div class="gallery">
+      <figure class="gallery__item gallery__item--1">
+        <img src="ba.jpg" class="gallery__img" alt="Image 1">
+        <div class="cover cover3"></div>
+        <div class="projectinfo">
+          <div class="projecttitle">Lorem Ipsum</div>
+          <div class="projecttext">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do.</div>
+        </div>
+      </figure>
+      <figure class="gallery__item gallery__item--2">
+        <img src="ba2.jpg" class="gallery__img" alt="Image 2">
+        <div class="cover cover3"></div>
+        <div class="projectinfo">
+          <div class="projecttitle">Lorem Ipsum</div>
+          <div class="projecttext">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do.</div>
+        </div>
+      </figure>
+      <figure class="gallery__item gallery__item--3">
+        <img src="ba3.jpg" class="gallery__img" alt="Image 3">
+        <div class="cover cover3"></div>
+        <div class="projectinfo">
+          <div class="projecttitle">Lorem Ipsum</div>
+          <div class="projecttext">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do..</div>
+        </div>
+      </figure>
+      <figure class="gallery__item gallery__item--4">
+        <img src="ba4.jpg" class="gallery__img" alt="Image 4">
+        <div class="cover cover3"></div>
+        <div class="projectinfo">
+          <div class="projecttitle">Lorem Ipsum</div>
+          <div class="projecttext">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do.</div>
+        </div>
+      </figure>
+      <figure class="gallery__item gallery__item--5">
+        <img src="ba.jpg" class="gallery__img" alt="Image 5">
+        <div class="cover cover3"></div>
+        <div class="projectinfo">
+          <div class="projecttitle">Lorem Ipsum</div>
+          <div class="projecttext">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do.</div>
+        </div>
+      </figure>
+      <figure class="gallery__item gallery__item--6">
+        <img src="ba2.jpg" class="gallery__img" alt="Image 6">
+        <div class="cover cover3"></div>
+        <div class="projectinfo">
+          <div class="projecttitle">Lorem Ipsum</div>
+          <div class="projecttext">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do.</div>
+        </div>
+      </figure>
+    </div>
+  </div>  
+
+  <div class="aboutwrapper">
+    <div class="aboutbox">
+      <div class="aboutimg"></div>
+      <h1 class="abouthead">About Us</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat.</p>
+      <span class="servelink">Learn more</span>
+    </div>
+  </div> 
+
+  <div class="testbox">
+    <div class="container">
+      <h1 class="testhead partnerhead">Testimonials</h1>
+
+      <div class="carousel testcarousel">
+        <div class="carousel-cell 1 carousel-cell-test">
+          <div class="card">
+            <div class="card-body testcard">
+              <div class="testiconbox">
+                <i class="fas fa-quote-left"></i>
+              </div>
+              <p class="card-text testp">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-cell 2 carousel-cell-test">
+          <div class="card">
+            <div class="card-body testcard">
+              <div class="testiconbox">
+                <i class="fas fa-quote-left"></i>
+              </div>
+              <p class="card-text testp">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-cell 3 carousel-cell-test">
+          <div class="card">
+            <div class="card-body testcard">
+              <div class="testiconbox">
+                <i class="fas fa-quote-left"></i>
+              </div>
+              <p class="card-text testp">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-cell 4 carousel-cell-test">
+          <div class="card">
+            <div class="card-body testcard">
+              <div class="testiconbox">
+                <i class="fas fa-quote-left"></i>
+              </div>
+              <p class="card-text testp">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footerwrapper partnerwrapper">
+  <h1 class="foothead partnerhead">Partners</h1>
+  <div class="container partinnerbox">
+    <div class="partimgbox">
+      <div class="partimg"></div>
+    </div>
+    <div class="partimgbox">
+      <div class="partimg"></div>
+    </div>
+    <div class="partimgbox">
+      <div class="partimg"></div>
+    </div>
+  </div>
+</div>
+
+<div class="footerwrapper">
+  <h1 class="foothead">Contact Us</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-sm-4 contactbox">
+        <h1>Logo</h1>
+      </div>
+      <div class="col-md-4 col-sm-4 contactbox">
+        <p class="contacttext">+91 98xxxxxxx0</p>
+        <p class="contacttext">sample@gmail.com</p>
+        <p class="contacttext">xx sample address, India</p>
+      </div>
+      <div class="col-md-4 col-sm-4 contactbox">
+        <p class="foottext">Connect</p>
+        <p class="connectbox">
+          <i class="fab fa-twitter connecticon"></i>
+        </p>
+        <p class="connectbox">
+          <i class="fab fa-facebook-f connecticon"></i>
+        </p>
+        <p class="connectbox">
+          <i class="fab fa-linkedin connecticon"></i>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>     
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.pkgd.js"></script>
+<script>
+  $(function () {
+    $(document).scroll(function () {
+      var $nav = $(".navbar-fixed-top");
+      $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+    });
+  });
+
+  var testcarousel = $('.testcarousel').flickity({
+    prevNextButtons: true,
+    pageDots: false,
+    autoPlay: 2000,
+    wrapAround: true,
+  });
+
+  $('.counter-count').each(function () {
+    $(this).prop('Counter',0).animate({
+      Counter: $(this).text()
+    }, {
+      duration: 2000,
+      easing: 'swing',
+      step: function (now) {
+        $(this).text(Math.ceil(now));
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
