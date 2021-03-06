@@ -68,7 +68,7 @@ nav {
 .projectheadbox {
   height: 250px;
   width: 100%;
-  background: url(ba2.jpg);
+  background: url("./Images/ba2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -206,7 +206,7 @@ nav {
 }
 
 .aboutimg {
-  background: url(ba2.jpg);
+  background: url("./Images/ba2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
